@@ -2,10 +2,10 @@
 
 include("db-config.php");
 
-if(isset($_GET['id'])) {
+if($_SERVER['REQUEST_METHOD'] === 'GET') {
     $id = $_GET['id'];
     // var_dump($identificador);
-    $query = "DELETE FROM task WHERE id = $id ";
+    $query = "DELETE FROM task WHERE id = '$id' ";
     $resultado = mysqli_query($db, $query);
 
     if(!$resultado) {
