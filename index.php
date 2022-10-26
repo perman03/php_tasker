@@ -53,6 +53,7 @@
                         </thead>
                         <tbody>
                             <?php 
+
                                 $query = "SELECT * FROM task";
                                 $tareas = mysqli_query($db, $query);
                                 while($row = mysqli_fetch_array($tareas)): ?>
@@ -62,8 +63,8 @@
                                     <td><?php echo $row['descripcion'];?></td>
                                     <td><?php echo $row['creado_en'];?></td>
                                     <td>
-                                        <a class="btn btn-secondary" href="/php_notes_crud/editar.php?=id<?php echo $row['id']?>"> <i class="fas fa-marker"></i>  </a>
-                                        <a class="btn btn-danger" href="/php_notes_crud/eliminar.php?=id<?php echo $row['id']?>"> <i class="far fa-trash-alt"></i> </a>
+                                        <a class="btn btn-secondary" href="/php_notes_crud/editar.php?id=<?php echo $row['id']?>"> <i class="fas fa-marker"></i>  </a>
+                                        <a class="btn btn-danger" href="eliminar.php?id=<?php echo $row['id']?>"> <i class="far fa-trash-alt"></i> </a>
                                     </td>
                                 </tr>
 

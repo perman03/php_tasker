@@ -15,13 +15,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     if(!$resultado){
         die("Query failed");
+        
     }
 
     //sesiones para desplegar mensaje de confirmacion
     $_SESSION['mensaje'] = 'TAREA REGISTRADA CORRECTAMENTE';
     $_SESSION['mensaje_type'] = 'success';
 
-    header("Location: /php_notes_crud/index.php");
+    header("Location: index.php");
    
 
 }
